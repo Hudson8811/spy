@@ -21,8 +21,8 @@
 }
 
 .gallery-item {
-    margin: 0 vw(20) vw(30);
-    width: calc(33.33333% - #{vw(40)});
+    margin: 0 20px vw(30);
+    width: calc(33.33333% - 40px});
 
     &__pic {
         position: relative;

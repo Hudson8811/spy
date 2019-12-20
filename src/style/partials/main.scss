@@ -323,6 +323,7 @@ section {
 .take-part-decoration-1 {
 	position: absolute;
 	top: vw(59);
+	width: vw(154);
 	right: vw(29);
 }
 
@@ -364,7 +365,9 @@ section {
 	align-items: center;
 	margin: vw(42) auto 0;
 
+    display: block;
 	span {
+		margin-bottom: 0;
 		/* Text style for "с, огласен" */
 		letter-spacing: vw(0.42);
 		/* Text style for "правилами" */
@@ -374,6 +377,9 @@ section {
 		font-size: vw(14);
 	}
 
+	label+span::before{
+		display: none;
+	}
 	a {
 		text-decoration: underline;
 		color: #656565;
