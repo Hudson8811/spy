@@ -317,7 +317,7 @@ section {
 	display: none;
 	flex-direction: column;
 	padding-top: vw(87);
-    text-align: center;
+	text-align: center;
 }
 
 .take-part-decoration-1 {
@@ -365,7 +365,8 @@ section {
 	align-items: center;
 	margin: vw(42) auto 0;
 
-    display: block;
+	display: block;
+
 	span {
 		margin-bottom: 0;
 		/* Text style for "с, огласен" */
@@ -377,9 +378,10 @@ section {
 		font-size: vw(14);
 	}
 
-	label+span::before{
+	label+span::before {
 		display: none;
 	}
+
 	a {
 		text-decoration: underline;
 		color: #656565;
@@ -841,9 +843,35 @@ section {
 			opacity: 1;
 		}
 	}
-	&.select-photo--selected{
-		.btn{
+
+	&.select-photo--selected {
+		.btn {
 			display: none;
 		}
+	}
+}
+
+
+.afterSubmitFancy {
+	width: 600px;
+	max-width: 100%;
+	&__title {
+		text-align: center;
+		font-family: 'Helvetica Neue - Condensed Black';
+		color: #531b62;
+		font-size: 26px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.78px;
+	}
+
+	&__p {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 20px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.78px;
+		line-height: 1.3;
 	}
 }

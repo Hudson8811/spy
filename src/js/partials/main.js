@@ -28,3 +28,11 @@ $(document).ready(function () {
 function setUpFileName(name){
     $('#select-photo').addClass('select-photo--selected').find('span').html(name.replace(/.+[\\\/]/, ""));
 }
+
+function afterSubmit() {
+    event.preventDefault();
+    $.fancybox.open({
+        src: '#afterSubmitFancy',
+        type: 'inline'
+    });
+}
