@@ -102,7 +102,7 @@ img {
 		display: none;
 
 		&:checked+span::before {
-			background-image: url(../../img/checked.svg);
+			background-image: url(../img/checked.svg);
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: 64% auto;
@@ -530,7 +530,7 @@ section {
 		width: vw(1110);
 		height: vw(162);
 		content: '';
-		background: url(../../img/shining-2.png) no-repeat center center;
+		background: url(../img/shining-2.png) no-repeat center center;
 		background-size: cover;
 	}
 }
