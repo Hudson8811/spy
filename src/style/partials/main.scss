@@ -794,7 +794,7 @@ section {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	margin-top: 20px;
+	margin-top: vw(20);
 }
 
 .select-photo {
@@ -817,18 +817,18 @@ section {
 	span {
 		color: #656565;
 		display: block;
-		font-size: 20px;
+		font-size: vw(20);
 		font-weight: 500;
-		padding-right: 15px;
+		padding-right: vw(15);
 
 	}
 
 	.btn {
-		padding: 5px 14px;
-		border-radius: 5px;
+		padding: vw(5) vw(14);
+		border-radius: vw(5);
 
 		svg {
-			width: 60px;
+			width: vw(60);
 		}
 
 		&:hover {
