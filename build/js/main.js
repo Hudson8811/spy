@@ -55,7 +55,7 @@ $(document).ready(function () {
         e.preventDefault();
         var formData = new FormData($('#imgUpload')[0]);
         $.ajax({
-            url: '/save_photo/',
+            url: 'http://localhost/save_photo/',
             type: "POST",
             data: formData,
             cache:false,
@@ -63,6 +63,8 @@ $(document).ready(function () {
             contentType: false,
             success: function(response) {
                 afterSubmit();
+                $('#imgUpload').trigger("reset");
+                $('#select-photo').removeClass('select-photo--selected').find('span').html('Выбрать файл:');
             },
             error: function(response) {
                 console.log(response);
@@ -83,7 +85,6 @@ $(document).ready(function () {
 
 });
 function setUpFileName(name){
-    console.log($('input[name=photo]'));
     if (name){
         $('#select-photo').addClass('select-photo--selected').find('span').html(name.replace(/.+[\\\/]/, ""));
     } else {
