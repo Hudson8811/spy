@@ -94,7 +94,6 @@ $(document).ready(function () {
                     var error = parse.error;
                     var count = parse.count;
                     if (result == 0){
-                        console.log(id);
                         $('.photos-slider').find('.photos-slider-slide__pic[data-id='+id+']').each(function () {
                             $(this).siblings('.photos-slider-slide-bottom').find('.photos-slider-slide-bottom__rating').addClass('photos-slider-slide-bottom__rating--liked').html(count);
                         });
