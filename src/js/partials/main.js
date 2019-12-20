@@ -23,16 +23,117 @@ $(document).ready(function () {
         slidesToScroll: 1
     });
 
+    $('#imgUpload').on('submit',function (e) {
+        e.preventDefault();
+        var formData = new FormData($('#imgUpload')[0]);
+        $.ajax({
+            url: '/save_photo/',
+            type: "POST",
+            data: formData,
+            cache:false,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                afterSubmit();
+            },
+            error: function(response) {
+                console.log(response);
+            }
+        });
+    });
+
+    $('.take-part input').on('change keyup paste focusout', function () {
+       if (checkFormElements('.take-part')){
+           $('.btn-send-form').removeAttr('disabled');
+       } else {
+           $('.btn-send-form').attr('disabled', 'disabled');
+       }
+    });
+
+
+
 
 });
 function setUpFileName(name){
-    $('#select-photo').addClass('select-photo--selected').find('span').html(name.replace(/.+[\\\/]/, ""));
+    console.log($('input[name=photo]'));
+    if (name){
+        $('#select-photo').addClass('select-photo--selected').find('span').html(name.replace(/.+[\\\/]/, ""));
+    } else {
+        $('#select-photo').removeClass('select-photo--selected').find('span').html('Выбрать файл:');
+    }
 }
 
 function afterSubmit() {
-    event.preventDefault();
     $.fancybox.open({
         src: '#afterSubmitFancy',
         type: 'inline'
     });
+}
+
+
+
+function checkFormElem(elem) {
+    var el = $(elem),
+        error = checkForm(el),
+        ok = true;
+
+    if (error === 'empty') {
+        var req_attr = el.attr('required');
+
+        if (typeof req_attr === typeof undefined || req_attr === 'false') {
+            error = '';
+        }
+    }
+
+    switch (error) {
+        case 'empty':
+            ok = false;
+            break;
+        default:
+            break;
+    }
+
+    return ok;
+}
+
+function checkForm(elem) {
+    var name = $(elem).attr('name'),
+        value = $(elem).val(),
+        result = false;
+    result = false;
+    re = '';
+    if (value !== '') {
+        switch (name) {
+            case 'email':
+                re = /\S+@\S+\.\S+/;
+                result = re.test(value);
+                result = result ? result : 'format';
+                break;
+            case 'phone':
+                re = /^[0-9-+]{6,18}$/;
+                result = re.test(value);
+                result = result ? result : 'format';
+                break;
+            default:
+                re = /\S{1,}$/;
+                result = re.test(value);
+        }
+    }
+    else {
+        return 'empty';
+    }
+
+    return result;
+}
+
+function checkFormElements(form) {
+    var ok = true;
+
+    $(form).find('input[required]').each(function () {
+        if (!checkFormElem(this)) {
+            ok = false;
+        }
+    });
+
+    return ok;
 }

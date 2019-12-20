@@ -395,6 +395,10 @@ section {
 .btn-send-form {
 	width: vw(193);
 	margin: vw(40) auto 0;
+	&:disabled{
+		opacity: 0.5;
+		cursor: default;
+	}
 }
 
 .photos-slider-wrap {

@@ -54,16 +54,16 @@
 				<div class="btn btn--grad-bg">призы</div>
 				<button class="btn btn--grad-bg js-form-show">загрузить фото</button>
 			</div>
-			<form action="" class="take-part">
+			<form action="/" class="take-part" enctype="multipart/form-data" method="post" id="imgUpload">
 				<div class="take-part-decoration-1">
 					<img src="img/птица-4.png" alt="">
 				</div>
-				<input type="text" name="" id="" class="form-input" placeholder="Имя">
-				<input type="text" name="" id="" class="form-input" placeholder="E-mail">
+				<input type="text" name="name"  class="form-input" placeholder="Имя" required>
+				<input type="email" name="email"  class="form-input" placeholder="E-mail" required>
 				<div class="select-photo-wrap">
-					<label id="select-photo" class="select-photo"><input type="file"
-							onchange="setUpFileName(this.value);"><span>Выбрать
-							файл: </span>
+					<label id="select-photo" class="select-photo">
+						<input type="file" name="photo" onchange="setUpFileName(this.value);" required>
+						<span>Выбрать файл: </span>
 						<div class="btn">
 							<?xml version="1.0" encoding="iso-8859-1"?>
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -87,12 +87,11 @@
 							</svg>
 						</div>
 					</label></div>
-				<div class="cust-chb cust-chb-in-form"><label style="pointer-events: none;"><input type="checkbox" checked name=""
-							id=""><span></span></label><span>согласен с <a href="">правилами</a></span></div>
+				<div class="cust-chb cust-chb-in-form"><label style="pointer-events: none;"><input type="checkbox" checked name=""><span></span></label><span>согласен с <a href="">правилами</a></span></div>
 
 
 
-				<div class="btn btn-send-form"  onclick="afterSubmit();">отправить</div>
+				<button class="btn btn-send-form"  disabled="disabled">отправить</button>
 				<div id="afterSubmitFancy" class="afterSubmitFancy" style="display: none">
 					<div class="afterSubmitFancy__title">Спасибо!</div>
 					<div class="afterSubmitFancy__p">Ваша фотография будет опубликована на сайте после проверки модератором!</div>
