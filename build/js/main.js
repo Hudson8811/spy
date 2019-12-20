@@ -26,7 +26,7 @@ tpl:'<div class="fancybox-share"><h1>{{SHARE}}</h1><p><a class="fancybox-share__
 
 /* my scripts */
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("input[name='phone']").mask(" +7 (999) 999-99-99");
 
 
@@ -45,5 +45,14 @@ $(document).ready(function() {
             }
         });
     });
+    $('.slider-facts').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
 
 });
+function setUpFileName(name){
+    $('#select-photo').addClass('select-photo--selected').find('span').html(name.replace(/.+[\\\/]/, ""));
+}

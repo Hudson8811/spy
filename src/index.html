@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<div class="section-1" style="background-image: url(img/bg-1.png);">
+	<section class="section-1" style="background-image: url(img/bg-1.png);">
 		<div class="decoration-bg"><img src="img/bg-1-deco.png" alt=""></div>
 		<div class="container s1-top-block">
 			<a href="woman.ru" class="s1-top-block__woman hovo"> <img src="img/logo-w.svg" alt=""></a>
@@ -54,60 +54,122 @@
 				<div class="btn btn--grad-bg">призы</div>
 				<button class="btn btn--grad-bg js-form-show">загрузить фото</button>
 			</div>
-			<form action="" class="take-part">
+			<form action="" class="take-part" >
 				<div class="take-part-decoration-1">
 					<img src="img/птица-4.png" alt="">
 				</div>
 				<input type="text" name="" id="" class="form-input" placeholder="Имя">
 				<input type="text" name="" id="" class="form-input" placeholder="E-mail">
-				<label class="cust-chb cust-chb-in-form"><input type="checkbox" checked disabled name="" id=""><span>согласен с <a
-							href="">правилами</a></span></label>
+				<div class="select-photo-wrap">
+					<label id="select-photo" class="select-photo"><input type="file" onchange="setUpFileName(this.value);"><span>Выбрать
+							файл: </span>
+						<div class="btn">
+							<?xml version="1.0" encoding="iso-8859-1"?>
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58 58"
+								style="enable-background:new 0 0 58 58;" xml:space="preserve">
+								<g>
+									<path
+										d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z"
+										fill="#ffffff" />
+									<path d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569
+									C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568
+									S14.032,19,16,19z" fill="#ffffff" />
+									<path
+										d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414
+									l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11
+									c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743
+									c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z"
+										fill="#ffffff" />
+								</g>
+
+							</svg>
+						</div>
+					</label></div>
+				<label class="cust-chb cust-chb-in-form"><input type="checkbox" checked disabled name=""
+						id=""><span>согласен с <a href="">правилами</a></span></label>
+
+
 				<button class="btn btn-send-form" type="submit">отправить</button>
 			</form>
 			<div class="photos-slider-wrap">
 				<div class="photos-slider">
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
 							<div class="photos-slider-slide-bottom__rating">43</div>
 						</div>
 					</div>
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
 							<div class="photos-slider-slide-bottom__rating">43</div>
 						</div>
 					</div>
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/bg-2.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
-							<div class="photos-slider-slide-bottom__rating photos-slider-slide-bottom__rating--liked">43</div>
+							<div class="photos-slider-slide-bottom__rating photos-slider-slide-bottom__rating--liked">43
+							</div>
 						</div>
 					</div>
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
 							<div class="photos-slider-slide-bottom__rating">43</div>
 						</div>
 					</div>
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
 							<div class="photos-slider-slide-bottom__rating">43</div>
 						</div>
 					</div>
 					<div class="photos-slider-slide">
-						<div class="photos-slider-slide__pic" data-id="123"><img src="img/slider-pic.jpg" alt=""></div>
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/bg-2.jpg" alt=""></a>
 						<div class="photos-slider-slide-bottom">
 							<div class="photos-slider-slide-bottom__name">Вася</div>
-							<div class="photos-slider-slide-bottom__rating ">43</div>
+							<div class="photos-slider-slide-bottom__rating photos-slider-slide-bottom__rating--liked">43
+							</div>
 						</div>
 					</div>
+					<div class="photos-slider-slide">
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
+						<div class="photos-slider-slide-bottom">
+							<div class="photos-slider-slide-bottom__name">Вася</div>
+							<div class="photos-slider-slide-bottom__rating">43</div>
+						</div>
+					</div>
+					<div class="photos-slider-slide">
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/slider-pic.jpg" alt=""></a>
+						<div class="photos-slider-slide-bottom">
+							<div class="photos-slider-slide-bottom__name">Вася</div>
+							<div class="photos-slider-slide-bottom__rating">43</div>
+						</div>
+					</div>
+					<div class="photos-slider-slide">
+						<a class="photos-slider-slide__pic" data-fancybox="gallery" href="img/slider-pic.jpg"
+							data-id="123"><img src="img/bg-2.jpg" alt=""></a>
+						<div class="photos-slider-slide-bottom">
+							<div class="photos-slider-slide-bottom__name">Вася</div>
+							<div class="photos-slider-slide-bottom__rating photos-slider-slide-bottom__rating--liked">43
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 			<div class="watch-all-photos">
@@ -115,9 +177,118 @@
 			</div>
 
 		</div>
-	</div>
+	</section>
 
+	<section class="section-2" style="background-image: url(img/bg-2.jpg);">
+		<div class="container">
+			<h2 class="section-2-title"><span>интересные факты</span></h2>
+			<div class="slider-facts">
+				<div class="slider-facts-slide">
+					<div class="slider-facts-slide__pic"><img src="img/fact-1.jpg" alt=""></div>
+					<div class="slider-facts-slide__title">
+						Почему цветовое оформление фильма меняется по мере развития сюжета?
+					</div>
+					<div class="slider-facts-slide__description">
+						Специальный язык цвета, придуманный художником-постановщиком, должен подчеркнуть текущее
+						состояние героев и незаметно повлиять на зрительское восприятие происходящего.
+						<br>Так, например,
+						теплые цвета символизируют командную работу и общность интересов, а холодные – стремление
+						персонажа отделиться от остальных. Тот же эффект использовался и при отрисовке декораций:
+						подбирался под сюжет даже оттенок неба и цвета помещений, в которых находятся герои.
+					</div>
+				</div>
+				<div class="slider-facts-slide">
+					<div class="slider-facts-slide__pic"><img src="img/fact-1.jpg" alt=""></div>
+					<div class="slider-facts-slide__title">
+						Почему цветовое оформление фильма меняется по мере развития сюжета?
+					</div>
+					<div class="slider-facts-slide__description">
+						Специальный язык цвета, придуманный художником-постановщиком, должен подчеркнуть текущее
+						состояние героев и незаметно повлиять на зрительское восприятие происходящего.
+						<br>Так, например,
+						теплые цвета символизируют командную работу и общность интересов, а холодные – стремление
+						персонажа отделиться от остальных. Тот же эффект использовался и при отрисовке декораций:
+						подбирался под сюжет даже оттенок неба и цвета помещений, в которых находятся герои.
+					</div>
+				</div>
+				<div class="slider-facts-slide">
+					<div class="slider-facts-slide__pic"><img src="img/fact-1.jpg" alt=""></div>
+					<div class="slider-facts-slide__title">
+						Почему цветовое оформление фильма меняется по мере развития сюжета?
+					</div>
+					<div class="slider-facts-slide__description">
+						Специальный язык цвета, придуманный художником-постановщиком, должен подчеркнуть текущее
+						состояние героев и незаметно повлиять на зрительское восприятие происходящего.
+						<br>Так, например,
+						теплые цвета символизируют командную работу и общность интересов, а холодные – стремление
+						персонажа отделиться от остальных. Тот же эффект использовался и при отрисовке декораций:
+						подбирался под сюжет даже оттенок неба и цвета помещений, в которых находятся герои.
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-3" style="background-image: url(img/bg-3.jpg);">
+		<div class="s3-pic-titles container">
+			<div class="s3-pic-titles__bs">
+				<img src="img/bs.svg" alt="">
+			</div>
+			<div class="s3-pic-titles__film-name">
+				<img src="img/title.png" alt="">
+			</div>
+			<div class="s3-pic-titles__v-kino">
+				<img src="img/В кино.svg" alt="">
+			</div>
+			<div class="s3-pic-titles__3d">
+				<img src="img/3d.svg" alt="">
+			</div>
+		</div>
 
+		<div class="s3-main-block container">
+			<div class="s3-main-block__deco-1"><img src="img/человек-1.png" alt=""></div>
+			<div class="s3-main-block__deco-2"><img src="img/человек-2.png" alt=""></div>
+			<div class="s3-main-block-text">
+				<div class="s3-main-block__title">Агент на птичьих правах!</div>
+				<p>
+					Шпионское кино, динамичный боевик и комедия про приключения странной парочки друзей… Анимационный
+					фильм
+					«Камуфляж и шпионаж» успешно сочетает в себе лучшие черты каждого из этих жанров! Самый крутой
+					супершпион Лэнс вынужден спасать мир в теле голубя, а чудаковатый, но гениальный изобретатель Уолтер
+					помогает ему, впервые работая за пределами своей лаборатории.
+				</p>
+				<p> «Камуфляж и шпионаж» наполнен экзотическим колоритом, шпионскими тайнами, футуристическими гаджетами
+					и
+					классическими шутками. Это яркий и атмосферный мультфильм, который заставит зрителей и смеяться, и
+					переживать, и думать о том, что важнее: командная работа или яркая индивидуальность.
+				</p>
+				<p>Ну и, конечно, после просмотра фильма вы взглянете на привычных городских голубей совсем другими
+					глазами!
+					Вдруг в ком-то из них тоже прячется известный супершпион?</p>
+			</div>
+
+			<div class="btn btn-buy-ticket">купить билет</div>
+		</div>
+		<div class="s3-video-block"><iframe width="560" height="315" src="https://www.youtube.com/embed/FGn1nHAaVe0"
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe></div>
+		<div class="s3-parthners-wrap container">
+			<div class="s3-parthners">
+				<a href="" class="s3-parthners__parthner hovcb"><img src="img/bs.svg" alt=""></a>
+				<a href="" class="s3-parthners__parthner hovcb"><img src="img/real3d.svg" alt=""></a>
+				<a href="" class="s3-parthners__parthner s3-parthners__parthner--6y hovcb"><img src="img/6+.svg"
+						alt=""></a>
+			</div>
+		</div>
+		<div class="s3-footer container">
+			<div class="s3-footer-soc">
+				<a href="" class="s3-footer-soc__social hovco6"><img src="img/tw.svg" alt=""></a>
+				<a href="" class="s3-footer-soc__social hovco6"><img src="img/fb.svg" alt=""></a>
+				<a href="" class="s3-footer-soc__social hovco6"><img src="img/vk.svg" alt=""></a>
+				<a href="" class="s3-footer-soc__social hovco6"><img src="img/ok.svg" alt=""></a>
+			</div>
+			<div class="s3-footer__production">© 2019 HSM production</div>
+		</div>
+	</section>
 
 	<script src="js/main.js"></script>
 
