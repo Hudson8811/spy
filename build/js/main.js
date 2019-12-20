@@ -55,7 +55,7 @@ $(document).ready(function () {
         e.preventDefault();
         var formData = new FormData($('#imgUpload')[0]);
         $.ajax({
-            url: 'http://localhost/save_photo/',
+            url: '/save_photo/',
             type: "POST",
             data: formData,
             cache:false,
@@ -81,6 +81,30 @@ $(document).ready(function () {
     });
 
 
+    $('.photos-slider-slide-bottom__rating').click(function () {
+        if (!$(this).hasClass('.photos-slider-slide-bottom__rating--liked')){
+            var id = $(this).closest('.photos-slider-slide').find('.photos-slider-slide__pic').data('id');
+            $.ajax({
+                type: "POST",
+                url: "/add_like/",
+                data: {"id": id},
+                success: function(data) {
+                    var parse = JSON.parse(data);
+                    var result = parse.result;
+                    var error = parse.error;
+                    var count = parse.count;
+                    if (result == 0){
+                        console.log(id);
+                        $('.photos-slider').find('.photos-slider-slide__pic[data-id='+id+']').each(function () {
+                            $(this).siblings('.photos-slider-slide-bottom').find('.photos-slider-slide-bottom__rating').addClass('photos-slider-slide-bottom__rating--liked').html(count);
+                        });
+                    } else {
+                        console.log(error);
+                    }
+                }
+            });
+        }
+    });
 
 
 });
