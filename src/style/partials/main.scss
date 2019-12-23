@@ -14,6 +14,9 @@ body {
 	background: #ffffff;
 	font-family: $font1;
 	font-size: vw(16);
+	@include media((
+					font-size: (md:  vw2(36)),
+	));
 }
 
 input,
@@ -25,6 +28,9 @@ textarea {
 	box-sizing: border-box;
 	width: vw(1060);
 	margin: 0 auto;
+	@include media((
+					width: (md:  vw2(666)),
+	));
 }
 
 #jGrowl {
@@ -87,6 +93,12 @@ img {
 	background: #521b61;
 	font-weight: 700;
 	font-size: vw(19);
+	@include media((
+					padding: (md:  vw2(35) vw2(70)),
+					letter-spacing: (md:  vw2(0.57)),
+					border-radius: (md:  vw2(54)),
+					font-size: (md:  vw2(36)),
+	));
 
 	&:hover {
 		opacity: .8;
@@ -111,7 +123,9 @@ img {
 
 	span {
 		margin-bottom: vw(8);
-
+		@include media((
+						margin-bottom: (md:  vw2(30)),
+		));
 		&::before {
 			position: relative;
 			top: vw(8);
@@ -124,6 +138,12 @@ img {
 			border: vw(1) solid #ddd;
 			background-color: #ffffff;
 			line-height: 1;
+			@include media((
+							width: (md:  vw2(77)),
+							height: (md:  vw2(77)),
+							margin-right: (md:  vw2(24)),
+							top: (md:  vw2(30)),
+			));
 		}
 	}
 }
@@ -136,6 +156,11 @@ section {
 
 .section-1 {
 	padding-top: vw(60);
+	@include media((
+					padding-top: (md:  vw2(30)),
+					background: (md: url(../img/bg-1-mob.jpg) center top  !important),
+					background-size: (md: 100%),
+	));
 }
 
 .decoration-bg {
@@ -143,6 +168,9 @@ section {
 	top: vw(539);
 	right: calc(50% - #{vw(882)});
 	width: vw(624);
+	@include media((
+					display: (md:  none),
+	));
 }
 
 .s1-top-block {
@@ -150,13 +178,33 @@ section {
 		display: block;
 		width: vw(236);
 		margin: 0 auto;
-
+		@include media((
+						width: (md:  vw2(329)),
+		));
 		img {}
 	}
 
 	&__super {
 		position: relative;
 		margin-top: vw(25);
+		@include media((
+						margin-top: (md:  vw2(30)),
+		));
+
+		a{
+			&.desktop{
+				display: block;
+				@include media((
+								display: (md:  none),
+				));
+			}
+			&.mobile{
+				display: none;
+				@include media((
+								display: (md:  block),
+				));
+			}
+		}
 
 		span {
 			display: block;
@@ -168,6 +216,14 @@ section {
 			font-family: 'Helvetica Neue - Condensed Black';
 			font-weight: 900;
 			font-size: vw(77);
+			position: relative;
+			z-index: 1;
+
+			@include media((
+							font-size: (md:  vw2(95)),
+							text-shadow: (md:  0 0 vw2(85) rgba(0, 247, 255, 0.75)),
+							letter-spacing: (md:  vw2(3)),
+			));
 		}
 
 		&::before {
@@ -180,6 +236,12 @@ section {
 			content: '';
 			background: url('../img/shining.png');
 			background-size: contain;
+			@include media((
+							top: (md:  vw2(-50)),
+							left: (md:  vw2(-50)),
+							width: (md:  vw2(750)),
+							height: (md:  vw2(145)),
+			));
 		}
 	}
 
@@ -193,6 +255,14 @@ section {
 		font-weight: 400;
 		font-size: vw(17);
 		line-height: vw(28);
+
+		@include media((
+						font-size: (md:  vw2(36)),
+						line-height: (md:  1.2),
+						letter: (md:  vw2(1.59)),
+						margin: (md:  vw2(300) auto 0),
+						max-width: (md:  91%),
+		));
 	}
 }
 
@@ -202,19 +272,29 @@ section {
 	left: vw(163);
 	width: vw(106);
 	transform: translateY(-100%);
+	z-index: 1;
 
+	@include media((
+					top: (md:  vw2(36)),
+					left: (md:  vw2(6)),
+					width: (md:  vw2(106)),
+	));
 	img {}
 }
 
 .s1-main-block-deco-1 {
 	position: absolute;
-	top: 0;
 	top: vw(-360);
-	left: 0;
 	left: vw(-374);
 	width: vw(787);
-
-	img {}
+	@include media((
+					top: (md:  vw2(-1162)),
+					left: (md:  vw2(-280)),
+					width: (md:  vw2(977)),
+	));
+	img {
+		width: 100%;
+	}
 }
 
 .s1-main-block-deco-2 {
@@ -223,7 +303,14 @@ section {
 	right: vw(-18);
 	width: vw(154);
 
-	img {}
+	@include media((
+					top: (md:  vw2(-90)),
+					right: (md:  vw2(53)),
+					width: (md:  vw2(154)),
+	));
+	img {
+		width: 100%;
+	}
 }
 
 .s1-main-block {
@@ -233,6 +320,12 @@ section {
 	padding-top: vw(27);
 	padding-bottom: vw(67);
 	background: #ffffff;
+	@include media((
+					margin-top: (md:  vw2(55)),
+					padding: (md:  vw2(90) vw2(0) vw2(80) ),
+					width: (md:  100%),
+					box-sizing: (md:  content-box),
+	));
 
 	&__title {
 		width: vw(360);
@@ -244,6 +337,11 @@ section {
 		font-family: 'Helvetica Neue - Condensed Black';
 		font-weight: 900;
 		font-size: vw(26);
+		@include media((
+						width: (md:  100%),
+						font-size: (md:  vw2(48) ),
+						letter-spacing: (md:  vw2(1.99)),
+		));
 	}
 
 	&__desc {
@@ -255,6 +353,12 @@ section {
 		font-weight: 400;
 		font-size: vw(17);
 		line-height: 1.2;
+		@include media((
+						width: (md:  91% ),
+						margin-top: (md:  vw2(50)),
+						letter-spacing: (md:  vw2(1.59)),
+						font-size: (md:  vw2(38)),
+		));
 	}
 }
 
@@ -263,17 +367,34 @@ section {
 	justify-content: space-between;
 	width: calc(86% - #{vw(42)});
 	margin: vw(23) auto 0;
+	@include media((
+					flex-direction: (md: column ),
+					align-items: (md:  center),
+					width: (md:  85%),
+					margin-top: (md:  vw2(60)),
+	));
 }
 
 .do-it-block-item {
 	width: calc(33.33% - #{vw(42)});
 	margin: vw(21);
-
+	@include media((
+					width: (md: 100% ),
+					margin: (md:  0),
+	));
+	+.do-it-block-item{
+		@include media((
+						margin-top: (md:  vw2(60)),
+		));
+	}
 	&__pic {
 		width: vw(132);
 		height: vw(132);
 		margin: 0 auto;
-
+		@include media((
+						width: (md:  vw2(226)),
+						height: (md:  vw2(226)),
+		));
 		img {
 			max-height: 100%;
 		}
@@ -288,6 +409,11 @@ section {
 		font-weight: 400;
 		font-size: vw(17);
 		line-height: 1.2;
+		@include media((
+						margin-top: (md:  vw2(35)),
+						letter-spacing: (md:  vw2(1.59)),
+						font-size: (md:  vw2(38)),
+		));
 	}
 
 	img {}
@@ -298,16 +424,33 @@ section {
 	justify-content: space-between;
 	width: 84.3%;
 	margin: vw(31) auto 0;
-
+	flex-direction: column;
+	align-items: center;
+	@include media((
+					flex-direction: (md:  column),
+					align-items: (md:  center),
+					width: (md:  vw2(550)),
+					margin-top: (md:  vw2(70)),
+	));
 	.btn {
-
+		+.btn{
+			@include media((
+							margin-top: (md:  vw2(62)),
+			));
+		}
 		&:nth-child(1),
 		&:nth-child(3) {
 			width: vw(290);
+			@include media((
+							width: (md:  100%),
+			));
 		}
 
 		&:nth-child(2) {
 			width: vw(149);
+			@include media((
+							width: (md:  vw2(281)),
+			));
 		}
 	}
 }
@@ -318,6 +461,10 @@ section {
 	flex-direction: column;
 	padding-top: vw(87);
 	text-align: center;
+
+	@include media((
+					padding-top: (md:  vw2(120)),
+	));
 }
 
 .take-part-decoration-1 {
@@ -325,6 +472,12 @@ section {
 	top: vw(59);
 	width: vw(154);
 	right: vw(29);
+
+	@include media((
+					top: (md:  vw2(510)),
+					width: (md:  vw2(197)),
+					right: (md:  vw2(0)),
+	));
 }
 
 .form-input {
@@ -341,9 +494,19 @@ section {
 	border: vw(1) solid #dddddd;
 	font-weight: 400;
 	font-size: vw(16);
+	@include media((
+					width: (md:  vw2(666)),
+					height: (md:  vw2(74)),
+					padding: (md:  0 vw2(20)),
+					letter-spacing: (md:  vw2(0.93)),
+					font-size: (md:  vw2(38)),
+	));
 
 	+.form-input {
 		margin-top: vw(37);
+		@include media((
+						margin-top: (md:  vw2(48)),
+		));
 	}
 
 	&::placeholder {
@@ -364,18 +527,23 @@ section {
 	justify-content: center;
 	align-items: center;
 	margin: vw(42) auto 0;
-
 	display: block;
+
+	@include media((
+					margin-top: (md:  vw2(45)),
+					order: (md:  10),
+	));
 
 	span {
 		margin-bottom: 0;
-		/* Text style for "с, огласен" */
-		letter-spacing: vw(0.42);
-		/* Text style for "правилами" */
 		letter-spacing: vw(0.42);
 		color: #656565;
 		font-weight: 400;
 		font-size: vw(14);
+		@include media((
+						font-size: (md:  vw2(34)),
+						letter-spacing: (md:  vw2(0.35)),
+		));
 	}
 
 	label+span::before {
@@ -395,6 +563,10 @@ section {
 .btn-send-form {
 	width: vw(193);
 	margin: vw(40) auto 0;
+	@include media((
+					width: (md:  vw2(367)),
+					margin-top: (md:  vw2(90)),
+	));
 	&:disabled{
 		opacity: 0.5;
 		cursor: default;
@@ -403,10 +575,17 @@ section {
 
 .photos-slider-wrap {
 	margin-top: vw(63);
+
+	@include media((
+					margin-top: (md:  vw2(184)),
+	));
 }
 
 .photos-slider {
 	margin: 0 vw(57);
+	@include media((
+					margin: (md:  vw2(127)),
+	));
 
 	.slick-arrow {
 		position: absolute;
@@ -425,14 +604,27 @@ section {
 		background-size: contain;
 		font-size: 0;
 
+		@include media((
+						top: (md:  vw2(139)),
+						width: (md:  vw2(98)),
+						height: (md:  vw2(98)),
+		));
+
 		&.slick-prev {
 			left: vw(-57);
 			background-image: url("../img/slider-arrow-left.svg");
+
+			@include media((
+							left: (md:  vw2(-115)),
+			));
 		}
 
 		&.slick-next {
 			right: vw(-57);
 			background-image: url("../img/slider-arrow-right.svg");
+			@include media((
+							right: (md:  vw2(-115)),
+			));
 		}
 
 		&:hover {
@@ -447,6 +639,12 @@ section {
 		height: vw(171);
 		margin-right: vw(22);
 		margin-left: vw(22);
+
+		@include media((
+						height: (md:  vw2(370)),
+						margin-right: (md:  vw2(0)),
+						margin-left: (md:  vw2(0)),
+		));
 	}
 
 	img {
@@ -465,11 +663,22 @@ section {
 	margin-right: vw(22);
 	margin-left: vw(22);
 
+	@include media((
+					margin-top: (md:  vw2(25)),
+					margin-right: (md:  vw2(0)),
+					margin-left: (md:  vw2(0)),
+	));
+
 	&__name {
 		letter-spacing: vw(0.42);
 		color: #3e1150;
 		font-weight: 500;
 		font-size: vw(14);
+
+		@include media((
+						letter-spacing: (md:  vw2(0.54)),
+						font-size: (md:  vw2(38)),
+		));
 	}
 
 	&__rating {
@@ -491,6 +700,14 @@ section {
 		font-weight: 500;
 		font-size: vw(14);
 
+		@include media((
+						width: (md:  vw2(96)),
+						height: (md:  vw2(79)),
+						padding-bottom: (md:  vw2(3)),
+						letter-spacing: (md:  vw2(0.54)),
+						font-size: (md:  vw2(38)),
+		));
+
 		&--liked {
 			cursor: default;
 			pointer-events: none;
@@ -503,6 +720,9 @@ section {
 .watch-all-photos {
 	margin-top: vw(75);
 	text-align: center;
+	@include media((
+					margin-top: (md:  vw2(70)),
+	));
 }
 
 .btn-watch-all-photos {
@@ -513,6 +733,13 @@ section {
 .section-2 {
 	padding-top: vw(31);
 	padding-bottom: vw(41);
+
+	@include media((
+					padding-top: (md:  vw2(50)),
+					padding-bottom: (md:  vw2(100)),
+					background: (md: url(../img/bg2-mobile.jpg) center top !important),
+					background-size: (md: cover),
+	));
 }
 
 .section-2-title {
@@ -520,13 +747,18 @@ section {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-	/* Text style for "и, нтересн" */
 	letter-spacing: vw(2.58);
 	color: #ffffff;
 	text-shadow: 0 0 vw(67) rgba(0, 247, 255, 0.75);
 	font-family: 'Helvetica Neue - Condensed Black';
 	font-weight: 400;
 	font-size: vw(86);
+	z-index: 1;
+	@include media((
+					letter-spacing: (md:  vw2(2.99)),
+					text-shadow: (md:  0 0 vw2(48) rgba(0, 247, 255, 1)),
+					font-size: (md:  vw2(72)),
+	));
 
 	&::before {
 		position: absolute;
@@ -538,12 +770,24 @@ section {
 		content: '';
 		background: url(../img/shining-2.png) no-repeat center center;
 		background-size: cover;
+		z-index: -1;
+		@include media((
+						top: (md:  vw2(-60)),
+						left: (md:  vw2(-50)),
+						width: (md:  vw2(750)),
+						height: (md:  vw2(145)),
+		));
 	}
 }
 
 .slider-facts {
 	width: vw(763);
 	margin: vw(33) vw(147) 0;
+
+	@include media((
+					width: (md:  100%),
+					margin: (md: vw2(35) 0 0),
+	));
 
 	.slick-arrow {
 		position: absolute;
@@ -561,6 +805,11 @@ section {
 		background-position: center center;
 		background-size: contain;
 		font-size: 0;
+
+		@include media((
+						display: (md: none !important),
+		));
+
 
 		&.slick-prev {
 			left: vw(-104);
@@ -608,6 +857,12 @@ section {
 		font-weight: 700;
 		font-size: vw(26);
 		line-height: 1.2;
+		@include media((
+						margin-top: (md: vw2(70)),
+						letter-spacing: (md: vw2(1.78)),
+						font-size: (md: vw2(43)),
+						text-align: (md: left),
+		));
 	}
 
 	&__description {
@@ -619,6 +874,20 @@ section {
 		color: #fffefe;
 		font-size: vw(16);
 		line-height: 1.24;
+		@include media((
+						margin-top: (md: vw2(35)),
+						letter-spacing: (md: vw2(1.58)),
+						font-size: (md: vw2(38)),
+						text-align: (md: left),
+						text-align-last: (md: left),
+		));
+		a{
+			color: #fffefe;
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -670,6 +939,13 @@ section {
 	padding-bottom: vw(54);
 	text-align: center;
 	background: #fff;
+
+	@include media((
+					margin-top: (md: 0),
+					padding-top: (md: vw2(0)),
+					padding-bottom: (md: vw2(0)),
+					text-align: (md: left),
+	));
 
 	&__deco-1 {
 		position: absolute;
@@ -832,13 +1108,20 @@ section {
 		font-size: vw(20);
 		font-weight: 500;
 		padding-right: vw(15);
+		@include media((
+						font-size: (md: vw2(34)),
+						padding-right: (md: vw2(30)),
+		));
 
 	}
 
 	.btn {
 		padding: vw(5) vw(14);
 		border-radius: vw(5);
-
+		@include media((
+						padding: (md: vw2(10) vw2(30)),
+						border-radius: (md: vw2(10)),
+		));
 		svg {
 			width: vw(60);
 		}
