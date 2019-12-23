@@ -825,12 +825,12 @@ section {
 		}
 	}
 	.slick-dots{
-		display: none;
+		display: none !important;
 		justify-content: center;
 		list-style: none;
 		margin-top: vw2(30);
 		@include media((
-						display: (md:  flex),
+						display: (md:  flex !important),
 		));
 		li{
 			button{
