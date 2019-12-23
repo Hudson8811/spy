@@ -1210,7 +1210,7 @@ section {
 	justify-content: center;
 	margin-top: vw(27);
 	@include media((
-					margin-top: (md: vw2(80)),
+					margin-bottom: (md: vw2(80)),
 	));
 	&__social {
 		max-width: vw(36);
