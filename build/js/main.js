@@ -40,7 +40,6 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    adaptiveHeight: true
                 }
             }
         ]
@@ -58,7 +57,9 @@ $(document).ready(function () {
     $('.slider-facts').slick({
         infinite: true,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        dots: true,
     });
 
     $('#imgUpload').on('submit',function (e) {

@@ -424,8 +424,6 @@ section {
 	justify-content: space-between;
 	width: 84.3%;
 	margin: vw(31) auto 0;
-	flex-direction: column;
-	align-items: center;
 	@include media((
 					flex-direction: (md:  column),
 					align-items: (md:  center),
@@ -824,6 +822,9 @@ section {
 		&:hover {
 			opacity: 0.6;
 		}
+	}
+	.slick-dots{
+
 	}
 }
 
