@@ -734,7 +734,7 @@ section {
 
 	@include media((
 					padding-top: (md:  vw2(50)),
-					padding-bottom: (md:  vw2(100)),
+					padding-bottom: (md:  vw2(40)),
 					background: (md: url(../img/bg2-mobile.jpg) center top !important),
 					background-size: (md: cover  !important),
 	));
@@ -824,7 +824,32 @@ section {
 		}
 	}
 	.slick-dots{
-
+		display: none;
+		justify-content: center;
+		list-style: none;
+		margin-top: vw2(30);
+		@include media((
+						display: (md:  flex),
+		));
+		li{
+			button{
+				font-size: 0;
+				color: transparent;
+				cursor: pointer;
+				border-radius: 100%;
+				border: 1px solid #ffffff;
+				background: transparent;
+				width: vw2(60);
+				height: vw2(60);
+				display: block;
+				margin: vw2(30);
+			}
+			&.slick-active{
+				button{
+					background: #ffffff;
+				}
+			}
+		}
 	}
 }
 
