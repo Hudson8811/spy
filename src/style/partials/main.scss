@@ -1085,7 +1085,7 @@ section {
 	margin-top: vw(20);
 
 	@include media((
-					width: (md: vw2(48)),
+					margin-top: (md: vw2(48)),
 	));
 }
 
