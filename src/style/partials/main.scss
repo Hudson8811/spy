@@ -1044,7 +1044,9 @@ section {
 
 .s3-footer {
 	text-align: center;
-
+	@include media((
+					margin: (md: 0),
+	));
 	&__production {
 		margin-top: vw(32);
 		text-align: center;
@@ -1053,6 +1055,13 @@ section {
 		font-weight: 400;
 		font-size: vw(16);
 		padding-bottom: vw(48);
+
+		@include media((
+						margin-top: (md: vw2(100)),
+						letter-spacing: (md: vw2(0.34)),
+						font-size: (md: vw2(34)),
+						padding-bottom: (md: vw2(60)),
+		));
 	}
 }
 
@@ -1060,12 +1069,19 @@ section {
 	display: flex;
 	justify-content: center;
 	margin-top: vw(27);
-
+	@include media((
+					margin-top: (md: vw2(80)),
+	));
 	&__social {
 		max-width: vw(36);
 		height: vw(34);
 		margin: 0 vw(17);
 
+		@include media((
+						max-width: (md: vw2(110)),
+						height: (md: vw2(98)),
+						margin: (md: 0 vw2(50)),
+		));
 		img {
 			height: 100%;
 		}
