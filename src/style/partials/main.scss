@@ -159,7 +159,7 @@ section {
 	@include media((
 					padding-top: (md:  vw2(30)),
 					background: (md: url(../img/bg-1-mob.jpg) center top  !important),
-					background-size: (md: 100%),
+					background-size: (md: 100%  !important),
 	));
 }
 
@@ -738,7 +738,7 @@ section {
 					padding-top: (md:  vw2(50)),
 					padding-bottom: (md:  vw2(100)),
 					background: (md: url(../img/bg2-mobile.jpg) center top !important),
-					background-size: (md: cover),
+					background-size: (md: cover  !important),
 	));
 }
 
@@ -893,6 +893,12 @@ section {
 
 .section-3 {
 	padding-top: vw(37);
+  @include media((
+          padding-top: (md:  vw2(40)),
+          padding-bottom: (md:  vw2(0)),
+          background: (md: url(../img/bg-3-mob.jpg) center top !important),
+          background-size: (md: 100% !important),
+  ));
 }
 
 .s3-main-block {}
@@ -911,24 +917,57 @@ section {
 
 	&__bs {
 		width: vw(85);
+		@include media((
+						width: (md: vw2(110)),
+		));
 	}
 
 	&__film-name {
 		width: vw(671);
 		margin-top: vw(-40);
 		margin-left: vw(-22);
+		.desktop{
+			@include media((
+							display: (md: none),
+			));
+		}
+		.mobile{
+			display: none;
+
+			@include media((
+							display: (md: block),
+			));
+		}
+
+		@include media((
+						width: (md: vw2(573)),
+						margin-top: (md: vw2(20)),
+						margin-left: (md: vw2(0)),
+		));
 	}
 
 	&__v-kino {
 		width: vw(447);
 		margin-top: vw(-67);
 		margin-left: vw(-11);
+
+		@include media((
+						width: (md: vw2(574)),
+						margin-top: (md: vw2(34)),
+						margin-left: (md: vw2(0)),
+		));
 	}
 
 	&__3d {
 		width: vw(190);
 		margin-top: vw(15);
 		margin-left: vw(-8);
+
+		@include media((
+						width: (md: vw2(247)),
+						margin-top: (md: vw2(20)),
+						margin-left: (md: vw2(0)),
+		));
 	}
 }
 
@@ -941,10 +980,10 @@ section {
 	background: #fff;
 
 	@include media((
-					margin-top: (md: 0),
-					padding-top: (md: vw2(0)),
-					padding-bottom: (md: vw2(0)),
-					text-align: (md: left),
+					padding-top: (md: vw2(314)),
+					padding-bottom: (md: vw2(130)),
+					width: (md: 100%),
+					margin: (md: vw2(-290) 0 0),
 	));
 
 	&__deco-1 {
@@ -952,7 +991,9 @@ section {
 		top: vw(71);
 		left: vw(37);
 		width: vw(236);
-
+		@include media((
+						display: (md: none),
+		));
 		img {}
 	}
 
@@ -962,14 +1003,36 @@ section {
 		right: vw(17);
 		width: vw(209);
 
+		@include media((
+						display: (md: none),
+		));
+
 		img {}
 	}
 
+	&__deco-mobile{
+		display: none;
+		width: vw2(637);
+		margin: 0 auto;
+		@include media((
+						display: (md: block),
+		));
+
+		img {
+			width: 100%;
+		}
+	}
 	&__title {
 		letter-spacing: vw(0.78);
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: vw(26);
+
+		@include media((
+						letter-spacing: (md: vw2(1.2)),
+						font-size: (md: vw2(43)),
+						margin-bottom: (md: vw2(35)),
+		));
 	}
 
 	p {
@@ -977,9 +1040,16 @@ section {
 		font-weight: 400;
 		font-size: vw(17);
 		line-height: 1.2;
+		@include media((
+						letter-spacing: (md: vw2(1.58)),
+						font-size: (md: vw2(38)),
+		));
 
 		&+p {
 			margin-top: vw(24);
+			@include media((
+							margin-top: (md: vw2(35)),
+			));
 		}
 	}
 }
@@ -989,17 +1059,44 @@ section {
 	margin: 0 auto;
 	text-align: center;
 	color: #000000;
+	@include media((
+					width: (md: vw2(670)),
+					text-align: (md: left),
+					margin-top: (md: vw2(40)),
+	));
 }
 
 .btn-buy-ticket {
 	width: vw(244);
 	margin: vw(47) 0 0;
+	@include media((
+					width: (md: vw2(666)),
+					margin: (md: vw2(95) auto 0),
+					text-align: (md: center),
+					font-size: (md: vw2(52)),
+					border-radius: (md: vw2(70)),
+	));
+	&.desktop{
+		@include media((
+						display: (md: none),
+		));
+	}
+	&.mobile{
+		display: none;
+		@include media((
+						display: (md: inline-block),
+		));
+	}
 }
 
 .s3-video-block {
 	position: relative;
 	width: vw(1198);
 	margin: 0 auto;
+	@include media((
+					margin: (md: 0),
+					width: (md: 100%),
+	));
 
 	&::before {
 		display: block;
@@ -1018,6 +1115,10 @@ section {
 
 .s3-parthners-wrap {
 	background: #fff;
+	@include media((
+					margin: (md: 0),
+					width: (md: 100%),
+	));
 }
 
 .s3-parthners {
@@ -1027,13 +1128,22 @@ section {
 	box-sizing: border-box;
 	width: 100%;
 	padding: vw(21) vw(15) vw(32);
-
+	@include media((
+					padding: (md: vw2(44) vw2(10) vw2(36)),
+	));
 	&__parthner {
 		height: vw(32);
 		margin: 0 vw(26);
 
+		@include media((
+						height: (md: vw2(60)),
+						margin: (md: 0 vw2(40)),
+		));
 		&--6y {
 			height: vw(49);
+			@include media((
+							height: (md: vw2(91)),
+			));
 		}
 
 		img {
@@ -1046,6 +1156,9 @@ section {
 	text-align: center;
 	@include media((
 					margin: (md: 0),
+					width: (md: 100%),
+					background: (md: #010008),
+					padding-top: (md: vw2(100)),
 	));
 	&__production {
 		margin-top: vw(32);
@@ -1057,7 +1170,7 @@ section {
 		padding-bottom: vw(48);
 
 		@include media((
-						margin-top: (md: vw2(100)),
+						margin-top: (md: vw2(0)),
 						letter-spacing: (md: vw2(0.34)),
 						font-size: (md: vw2(34)),
 						padding-bottom: (md: vw2(60)),
@@ -1080,7 +1193,7 @@ section {
 		@include media((
 						max-width: (md: vw2(110)),
 						height: (md: vw2(98)),
-						margin: (md: 0 vw2(50)),
+						margin: (md: 0 vw2(55)),
 		));
 		img {
 			height: 100%;
