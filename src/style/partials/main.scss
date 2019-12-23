@@ -1083,6 +1083,10 @@ section {
 	justify-content: center;
 	width: 100%;
 	margin-top: vw(20);
+
+	@include media((
+					width: (md: vw2(48)),
+	));
 }
 
 .select-photo {
@@ -1124,6 +1128,9 @@ section {
 		));
 		svg {
 			width: vw(60);
+			@include media((
+							width: (md: vw2(100)),
+			));
 		}
 
 		&:hover {
