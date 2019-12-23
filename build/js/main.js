@@ -60,6 +60,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         adaptiveHeight: true,
         dots: true,
+        touchMove: true
     });
 
     $('#imgUpload').on('submit',function (e) {
